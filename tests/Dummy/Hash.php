@@ -2,7 +2,7 @@
 
 namespace Dummy;
 
-class Hash extends \PO\Hash
+class Hash extends \Koine\Hash
 {
 
 }

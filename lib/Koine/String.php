@@ -1,6 +1,6 @@
 <?php
 
-namespace PO;
+namespace Koine;
 
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
@@ -143,7 +143,7 @@ class String extends Object
      *
      * @param integer start
      * @param  integer   $length the length of the string from the starting point
-     * @return PO\String
+     * @return Koine\String
      */
     public function at($start = null, $length = null)
     {
@@ -152,7 +152,7 @@ class String extends Object
 
     /**
      * Removes leading and trailing spaces
-     * @return PO\String
+     * @return Koine\String
      */
     public function trim()
     {

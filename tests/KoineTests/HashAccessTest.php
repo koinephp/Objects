@@ -1,8 +1,8 @@
 <?php
 
-namespace POTests;
+namespace KoineTests;
 
-use PO\Hash;
+use Koine\Hash;
 
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>

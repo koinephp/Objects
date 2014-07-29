@@ -1,8 +1,8 @@
 <?php
 
-namespace POTests;
+namespace KoineTests;
 
-use PO\Object;
+use Koine\Object;
 use Dummy\Object as Dummy;
 
 /**
@@ -18,7 +18,7 @@ class ObjectTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PO\NoMethodException
+     * @expectedException \Koine\NoMethodException
      * @expectedExceptionMessage \
      *    Undefined method 'unexistingMethod' for Dummy\Object
      */

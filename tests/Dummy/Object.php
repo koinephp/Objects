@@ -2,9 +2,9 @@
 
 namespace Dummy;
 
-use PO\String;
+use Koine\String;
 
-class Object extends \PO\Object
+class Object extends \Koine\Object
 {
 
     public function exampleOne()

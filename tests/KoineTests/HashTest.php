@@ -1,8 +1,8 @@
 <?php
 
-namespace POTests;
+namespace KoineTests;
 
-use PO\Hash;
+use Koine\Hash;
 
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
@@ -13,11 +13,11 @@ class HashTest extends \PHPUnit_Framework_TestCase
     public function assertHash($object)
     {
         // $object = new Hash;
-        $this->assertInstanceOf('PO\Hash', $object);
+        $this->assertInstanceOf('Koine\Hash', $object);
     }
 
     /**
-     * @covers PO\Hash::compact()
+     * @covers Koine\Hash::compact()
      */
     public function testItCanCampactAHash()
     {
@@ -28,7 +28,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::reject()
+     * @covers Koine\Hash::reject()
      */
     public function testItCanRejectElementsByValue()
     {
@@ -43,7 +43,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::reject()
+     * @covers Koine\Hash::reject()
      */
     public function testItCanRejectElementsByKey()
     {
@@ -58,7 +58,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::select()
+     * @covers Koine\Hash::select()
      */
     public function testItCanSelectElementsByValue()
     {
@@ -73,7 +73,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::select()
+     * @covers Koine\Hash::select()
      */
     public function testItCanSelectElementsByKey()
     {
@@ -88,7 +88,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::map()
+     * @covers Koine\Hash::map()
      */
     public function testItCanMapElements()
     {
@@ -104,7 +104,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::each()
+     * @covers Koine\Hash::each()
      */
     public function testItIterateViaEach()
     {
@@ -124,7 +124,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::each()
+     * @covers Koine\Hash::each()
      */
     public function testItIterateViaEachWithIndex()
     {
@@ -149,7 +149,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::create()
+     * @covers Koine\Hash::create()
      */
     public function testItCanFactoryTheCorrectClass()
     {
@@ -163,7 +163,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::create()
+     * @covers Koine\Hash::create()
      */
     public function testFactoryCanRecursivelyInstantiateHashes()
     {
@@ -194,7 +194,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::isEmpty()
+     * @covers Koine\Hash::isEmpty()
      */
     public function testIsEmpty()
     {
@@ -210,7 +210,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::count()
+     * @covers Koine\Hash::count()
      */
     public function testCount()
     {
@@ -226,7 +226,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::keys()
+     * @covers Koine\Hash::keys()
      */
     public function testKeys()
     {
@@ -240,11 +240,11 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $expected = array('foo', 'bar');
 
         $this->assertEquals($expected, $hash->keys()->toArray());
-        $this->assertInstanceOf('PO\String', $hash->keys()->first());
+        $this->assertInstanceOf('Koine\String', $hash->keys()->first());
     }
 
     /**
-     * @covers PO\Hash::hasKey()
+     * @covers Koine\Hash::hasKey()
      */
     public function testHasKey()
     {
@@ -255,7 +255,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::delete()
+     * @covers Koine\Hash::delete()
      */
     public function testDelete()
     {
@@ -268,7 +268,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::fetch()
+     * @covers Koine\Hash::fetch()
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Invalid key 'bar'
      */
@@ -281,7 +281,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::fetch()
+     * @covers Koine\Hash::fetch()
      */
     public function testFetchReturnsDefaultValue()
     {
@@ -290,7 +290,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::fetch()
+     * @covers Koine\Hash::fetch()
      */
     public function testFetchAcceptsLambdaAsDefaultValue()
     {
@@ -305,7 +305,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::valuesAt()
+     * @covers Koine\Hash::valuesAt()
      */
     public function testValuesAt()
     {
@@ -321,7 +321,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::join()
+     * @covers Koine\Hash::join()
      */
     public function testJoin()
     {
@@ -332,7 +332,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::first()
+     * @covers Koine\Hash::first()
      */
     public function testFirst()
     {
@@ -342,7 +342,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::last()
+     * @covers Koine\Hash::last()
      */
     public function testLast()
     {
@@ -352,7 +352,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::groupBy()
+     * @covers Koine\Hash::groupBy()
      */
     public function testGroupByWithCallableObject()
     {
@@ -375,7 +375,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::groupBy()
+     * @covers Koine\Hash::groupBy()
      */
     public function testGroupByWithKey()
     {
@@ -413,7 +413,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::sortBy()
+     * @covers Koine\Hash::sortBy()
      */
     public function testSortByWithCallableObject()
     {
@@ -423,7 +423,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::sortBy()
+     * @covers Koine\Hash::sortBy()
      */
     public function testSortByWithStringParam()
     {
@@ -431,7 +431,7 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\Hash::toArray()
+     * @covers Koine\Hash::toArray()
      */
     public function testToArray()
     {

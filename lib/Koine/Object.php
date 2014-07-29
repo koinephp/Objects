@@ -1,6 +1,6 @@
 <?php
 
-namespace PO;
+namespace Koine;
 
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
@@ -28,8 +28,8 @@ abstract class Object
     /**
      * Alias to missingMethod()
      *
-     * @see PO\Object::methodMissing()
-     * @throws PO\NoMethodException
+     * @see Koine\Object::methodMissing()
+     * @throws Koine\NoMethodException
      */
     public function __call($method, $args)
     {
@@ -39,7 +39,7 @@ abstract class Object
     /**
      * Method missing callback
      *
-     * @throws PO\NoMethodException
+     * @throws Koine\NoMethodException
      */
     public function methodMissing($method, $args)
     {
@@ -48,9 +48,9 @@ abstract class Object
 
     /**
      * Dinamicaly calls method
-     * @see PO\Object::__send
+     * @see Koine\Object::__send
      * @return mixed
-     * @throws PO\NoMethodError
+     * @throws Koine\NoMethodError
      */
     public function send()
     {
@@ -60,7 +60,7 @@ abstract class Object
     /**
      * Dinamicaly calls method
      * @return mixed
-     * @throws PO\NoMethodError
+     * @throws Koine\NoMethodError
      */
     final public function __send()
     {
@@ -96,9 +96,9 @@ abstract class Object
 
     /**
      * Get the methods that the object responds to
-     * @see PO\Object::__getMethods()
+     * @see Koine\Object::__getMethods()
      *
-     * @return PO\Hash.
+     * @return Koine\Hash.
      */
     public function getMethods()
     {
@@ -108,7 +108,7 @@ abstract class Object
     /**
      * Get the methods that the object responds to
      *
-     * @return PO\Hash.
+     * @return Koine\Hash.
      */
     final public function __getMethods()
     {

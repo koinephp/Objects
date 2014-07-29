@@ -1,6 +1,6 @@
 <?php
 
-namespace PO;
+namespace Koine;
 
 use InvalidArgumentException;
 use ArrayAccess;

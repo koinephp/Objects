@@ -7,5 +7,5 @@ $libPath   = realpath(dirname(__FILE__) . '/../lib/');
 $testsPath = realpath(dirname(__FILE__) . '/../tests/');
 
 $loader = require $libPath . '/../vendor/autoload.php';
-$loader->add('POTests\\', $testsPath);
+$loader->add('KoineTests\\', $testsPath);
 $loader->add('Dummy\\', $testsPath);

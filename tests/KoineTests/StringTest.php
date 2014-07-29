@@ -1,8 +1,8 @@
 <?php
 
-namespace POTests;
+namespace KoineTests;
 
-use PO\String;
+use Koine\String;
 
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
@@ -11,7 +11,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers PO\String::__toString()
+     * @covers Koine\String::__toString()
      */
     public function testItCanBeConvertedToString()
     {
@@ -20,7 +20,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PO\String::append()
+     * @covers Koine\String::append()
      */
     public function testItCanAppendString()
     {
@@ -42,24 +42,24 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider caseProvider
-     * @covers PO\String::toUpperCase()
+     * @covers Koine\String::toUpperCase()
      */
     public function testToUppercase($lower, $upper)
     {
         $string = new String($lower);
         $this->assertEquals($upper, $string->toUpperCase());
-        $this->assertInstanceOf('PO\String', $string->toUpperCase());
+        $this->assertInstanceOf('Koine\String', $string->toUpperCase());
     }
 
     /**
      * @dataProvider caseProvider
-     * @covers PO\String::toLowerCase()
+     * @covers Koine\String::toLowerCase()
      */
     public function testToLowerCase($lower, $upper)
     {
         $string = new String($upper);
         $this->assertEquals($lower, $string->toLowerCase());
-        $this->assertInstanceOf('PO\String', $string->toLowerCase());
+        $this->assertInstanceOf('Koine\String', $string->toLowerCase());
     }
 
     /**
@@ -76,13 +76,13 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider parameterizedProvider
-     * @covers PO\String::parameterize()
+     * @covers Koine\String::parameterize()
      */
     public function testParameterize($normal, $parameterized, $separator)
     {
         $string = new String($normal);
         $this->assertEquals($parameterized, $string->parameterize($separator));
-        $this->assertInstanceOf('PO\String', $string->toLowerCase());
+        $this->assertInstanceOf('Koine\String', $string->toLowerCase());
     }
 
     /**
@@ -98,14 +98,14 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider providerForGsub
-     * @covers PO\String::gsub()
+     * @covers Koine\String::gsub()
      */
     public function testGsub($string, $find, $replacement, $expected)
     {
         $string = new String($string);
         $result = $string->gsub($find, $replacement);
         $this->assertEquals($expected, $result);
-        $this->assertInstanceOf('PO\String', $result);
+        $this->assertInstanceOf('Koine\String', $result);
     }
 
     public function testSplit()
@@ -114,7 +114,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $expected = array('a', 'b', 'c');
         $split    = $string->split(', ');
         $this->assertEquals($expected, $split->toArray());
-        $this->assertInstanceOf('PO\String', $split->first());
+        $this->assertInstanceOf('Koine\String', $split->first());
     }
 
     public function countProvider()
@@ -154,7 +154,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $object = new String($value);
         $result = $object->at($start, $end);
 
-        $this->assertInstanceOf('PO\String', $result);
+        $this->assertInstanceOf('Koine\String', $result);
         $this->assertEquals($expected, (string) $result);
     }
 
