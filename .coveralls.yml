@@ -1,4 +1,4 @@
-repo_token: 0Q1LXtUNN9ANzTIVyaZMIpbY1RfENHIQT
+repo_token: OPN8olaFl1nRvhz01LAXQoVcvidZoYVti
 service_name: travis-ci
 src_dir: lib
 coverage_clover: coverage/coverage.xml
