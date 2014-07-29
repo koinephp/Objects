@@ -3,7 +3,7 @@
 This class should be used as base class for [nearly] every class.
 
 ```php
-use PO\Hash;
+use Koine\Hash;
 
 class MyClass extends Object {}
 

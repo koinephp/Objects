@@ -2,23 +2,28 @@
 
 Primitive types behaving like grown up objects. Compatible with PHP 5.3.3+
 
-[![Build Status](https://travis-ci.org/mjacobus/php-objects.png?branch=master)](https://travis-ci.org/mjacobus/php-objects)
-[![Coverage Status](https://coveralls.io/repos/mjacobus/php-objects/badge.png)](https://coveralls.io/r/mjacobus/php-objects)
-[![Code Climate](https://codeclimate.com/github/mjacobus/php-objects.png)](https://codeclimate.com/github/mjacobus/php-objects)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mjacobus/php-objects/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mjacobus/php-objects/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/php-objects/php-objects/v/stable.svg)](https://packagist.org/packages/php-objects/php-objects)
-[![Total Downloads](https://poser.pugx.org/php-objects/php-objects/downloads.svg)](https://packagist.org/packages/php-objects/php-objects)
-[![Latest Unstable Version](https://poser.pugx.org/php-objects/php-objects/v/unstable.svg)](https://packagist.org/packages/php-objects/php-objects)
-[![License](https://poser.pugx.org/php-objects/php-objects/license.svg)](https://packagist.org/packages/php-objects/php-objects)
+Code information:
+
+[![Build Status](https://travis-ci.org/koinephp/Object.png?branch=master)](https://travis-ci.org/koinephp/Object)
+[![Coverage Status](https://coveralls.io/repos/koinephp/Object/badge.png)](https://coveralls.io/r/koinephp/Object)
+[![Code Climate](https://codeclimate.com/github/koinephp/Object.png)](https://codeclimate.com/github/koinephp/Object)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/koinephp/Object/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/koinephp/Object/?branch=master)
+
+Package information:
+
+[![Latest Stable Version](https://poser.pugx.org/koine/objects/v/stable.svg)](https://packagist.org/packages/koine/objects)
+[![Total Downloads](https://poser.pugx.org/koine/objects/downloads.svg)](https://packagist.org/packages/koine/objects)
+[![Latest Unstable Version](https://poser.pugx.org/koine/objects/v/unstable.svg)](https://packagist.org/packages/koine/objects)
+[![License](https://poser.pugx.org/koine/objects/license.svg)](https://packagist.org/packages/koine/objects)
 
 Once you've written some ruby code and you HAVE to write php, you miss the
 hell out off ruby objects.
 
 Well, not anymore. Hopefully.
 
-- [PO\Object](docs/Object.md)
-- [PO\Hash](docs/Hash.md) - There are tons of contribuitions you can make here
-- [PO\String](docs/String.md) - And here!
+- [Koine\Object](docs/Object.md)
+- [Koine\Hash](docs/Hash.md) - There are tons of contribuitions you can make here
+- [Koine\String](docs/String.md) - And here!
 
 ## Installing
 

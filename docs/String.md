@@ -4,7 +4,7 @@ This is a (work in progress) port of Ruby String to PHP. Not all methods will be
 The examplified methods are already ported. The non documented methods must be implemented.
 
 ```php
-use PO\Hash;
+use Koine\Hash;
 ```
 
 The methods that have description are the ones that were impplemented. Fill free to write your implementation.
