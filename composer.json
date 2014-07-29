@@ -9,12 +9,11 @@
             "email": "marcelo.jacobus@gmail.com"
         }
     ],
+    "require" : {
+        "php": ">=5.3.3"
+    },
     "require-dev": {
-        "phpunit/PHPUnit": "3.7.*",
-        "phpmd/phpmd": "*",
-        "fabpot/php-cs-fixer": "dev-master",
-        "sebastian/phpdcd": "*",
-        "sebastian/phpcpd": "*",
+        "phpunit/PHPUnit": "*",
         "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
