@@ -1,5 +1,5 @@
 {
-    "name": "php-objects/php-objects",
+    "name": "koine/objects",
     "description": "Primitive types behaving like grown up objects",
     "homepage":"https://github.com/mjacobus/php-objects",
     "license": "MIT",
