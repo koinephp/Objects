@@ -5,7 +5,7 @@ Primitive types behaving like grown up objects. Compatible with PHP 5.3.3+
 Code information:
 
 [![Build Status](https://travis-ci.org/koinephp/Objects.png?branch=master)](https://travis-ci.org/koinephp/Objects)
-[![Coverage Status](https://coveralls.io/repos/koinephp/Objects/badge.png)](https://coveralls.io/r/koinephp/Objects)
+[![Coverage Status](https://coveralls.io/repos/koinephp/Objects/badge.png?branch=master)](https://coveralls.io/r/koinephp/Objects?branch=master)
 [![Code Climate](https://codeclimate.com/github/koinephp/Objects.png)](https://codeclimate.com/github/koinephp/Objects)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/koinephp/Objects/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/koinephp/Objects/?branch=master)
 
