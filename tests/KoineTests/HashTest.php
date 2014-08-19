@@ -12,10 +12,12 @@ class HashTest extends \PHPUnit_Framework_TestCase
 
     public function testItCanBeAccessWithHash()
     {
-        $this->assertFalse(isset($this->o['foo']));
-        $this->o['foo'] = 'bar';
-        $this->assertTrue(isset($this->o['foo'])).
-        $this->assertEquals('bar', $this->o['foo']);
+        $hash = new Hash;
+
+        $this->assertFalse(isset($hash['foo']));
+        $hash['foo'] = 'bar';
+        $this->assertTrue(isset($hash['foo']));
+        $this->assertEquals('bar', $hash['foo']);
     }
 
     public function testItImplementsIterator()
