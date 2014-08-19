@@ -6,6 +6,7 @@ use InvalidArgumentException;
 use ArrayAccess;
 use Iterator;
 use Countable;
+use Closure;
 
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
@@ -160,10 +161,10 @@ class Hash extends Object implements ArrayAccess, Iterator, Countable
     /**
      * Rejects elements if the given function evaluates to true
      *
-     * @param $callback callable function
-     * @return Hash the new hash containing the non rejected elements
+     * @param  Closure $callable function
+     * @return Hash    the new hash containing the non rejected elements
      */
-    public function reject($callback)
+    public function reject(Closure $callback)
     {
         $hash = $this->create();
 
@@ -179,10 +180,10 @@ class Hash extends Object implements ArrayAccess, Iterator, Countable
     /**
      * Select elements if the given function evaluates to true
      *
-     * @param $callback callable function
+     * @param  Closure $callable function
      * @return Hash the new hash containing the non rejected elements
      */
-    public function select($callback)
+    public function select(Closure $callback)
     {
         $hash = $this->create();
 
@@ -230,10 +231,10 @@ class Hash extends Object implements ArrayAccess, Iterator, Countable
     /**
      * Loop the elements of the Hash
      *
-     * @param  function $callable
+     * @param  Closure $callable function
      * @return Hash
      */
-    public function each($callable)
+    public function each(Closure $callable)
     {
         foreach ($this as $key => $value) {
             $callable($value, $key);
@@ -501,6 +502,7 @@ class Hash extends Object implements ArrayAccess, Iterator, Countable
      */
     protected function isCallable($callable)
     {
-        return gettype($callable) === 'object';
+        return gettype($callable) === 'object'
+            && get_class($callable) === 'Closure';
     }
 }
