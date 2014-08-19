@@ -71,15 +71,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         Dummy\Type::requireArray($hash);
     }
 
-    public function assertHash($object)
-    {
-        // $object = new Hash;
-        $this->assertInstanceOf('Koine\Hash', $object);
-    }
-
-    /**
-     * @covers Koine\Hash::compact()
-     */
     public function testItCanCampactAHash()
     {
         $hash = new Hash(array('foo' => 'bar', 'null' => null, 'empty' => ''));
@@ -88,9 +79,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertHash($compact);
     }
 
-    /**
-     * @covers Koine\Hash::reject()
-     */
     public function testItCanRejectElementsByValue()
     {
         $hash = new Hash(array('foo' => 'foobar', 'bar' => 'barfoo'));
@@ -103,9 +91,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertHash($filtered);
     }
 
-    /**
-     * @covers Koine\Hash::reject()
-     */
     public function testItCanRejectElementsByKey()
     {
         $hash = new Hash(array('foo' => 'foobar', 'bar' => 'barfoo'));
@@ -118,9 +103,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertHash($filtered);
     }
 
-    /**
-     * @covers Koine\Hash::select()
-     */
     public function testItCanSelectElementsByValue()
     {
         $hash = new Hash(array('foo' => 'foobar', 'bar' => 'barfoo'));
@@ -133,9 +115,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertHash($filtered);
     }
 
-    /**
-     * @covers Koine\Hash::select()
-     */
     public function testItCanSelectElementsByKey()
     {
         $hash = new Hash(array('foo' => 'foobar', 'bar' => 'barfoo'));
@@ -148,9 +127,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertHash($filtered);
     }
 
-    /**
-     * @covers Koine\Hash::map()
-     */
     public function testItCanMapElements()
     {
         $hash = new Hash(array('a' => 'b', 'c' => 'd'));
@@ -164,9 +140,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectation, $mapped->toArray());
     }
 
-    /**
-     * @covers Koine\Hash::each()
-     */
     public function testItIterateViaEach()
     {
         $hash = new Hash(array('a' => 'b', 'c' => 'd'));
@@ -184,9 +157,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectation, $array->toArray());
     }
 
-    /**
-     * @covers Koine\Hash::each()
-     */
     public function testItIterateViaEachWithIndex()
     {
         $hash = new Hash(array('a' => 'b', 'c' => 'd'));
@@ -209,9 +179,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectation, $array->toArray());
     }
 
-    /**
-     * @covers Koine\Hash::create()
-     */
     public function testItCanFactoryTheCorrectClass()
     {
         $hash = new \Dummy\Hash;
@@ -223,9 +190,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($params, $created->toArray());
     }
 
-    /**
-     * @covers Koine\Hash::create()
-     */
     public function testFactoryCanRecursivelyInstantiateHashes()
     {
         $params = array(
@@ -254,9 +218,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\Dummy\Hash', $hash);
     }
 
-    /**
-     * @covers Koine\Hash::isEmpty()
-     */
     public function testIsEmpty()
     {
         $hash = new Hash(array('foo' => 'bar'));
@@ -270,9 +231,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         // $this->assertTrue(empty($hash));
     }
 
-    /**
-     * @covers Koine\Hash::count()
-     */
     public function testCount()
     {
         $hash = new Hash(array('foo' => 'bar'));
@@ -286,9 +244,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, count($hash));
     }
 
-    /**
-     * @covers Koine\Hash::keys()
-     */
     public function testKeys()
     {
         $hash = new Hash(
@@ -304,9 +259,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Koine\String', $hash->keys()->first());
     }
 
-    /**
-     * @covers Koine\Hash::hasKey()
-     */
     public function testHasKey()
     {
         $hash = new Hash(array('foo' => 'foobar'));
@@ -315,9 +267,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($hash->hasKey('bar'));
     }
 
-    /**
-     * @covers Koine\Hash::delete()
-     */
     public function testDelete()
     {
         $object = new Hash;
@@ -329,7 +278,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Koine\Hash::fetch()
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Invalid key 'bar'
      */
@@ -341,18 +289,12 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $hash->fetch('bar');
     }
 
-    /**
-     * @covers Koine\Hash::fetch()
-     */
     public function testFetchReturnsDefaultValue()
     {
         $hash = Hash::create();
         $this->assertEquals('bar', $hash->fetch('foo', 'bar'));
     }
 
-    /**
-     * @covers Koine\Hash::fetch()
-     */
     public function testFetchAcceptsLambdaAsDefaultValue()
     {
         $hash = Hash::create(array('foo' => 'bar'));
@@ -365,9 +307,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("default for 'k'", $hash->fetch('k', $function));
     }
 
-    /**
-     * @covers Koine\Hash::valuesAt()
-     */
     public function testValuesAt()
     {
         $hash = new Hash(array('a' => 'b', 'c' => 'b'));
@@ -381,9 +320,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $hash->valuesAt('a', 'b')->toArray());
     }
 
-    /**
-     * @covers Koine\Hash::join()
-     */
     public function testJoin()
     {
         $hash = new Hash(array('a' => 'b', 'c' => 'd' ));
@@ -392,9 +328,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('b, d', $hash->join(', '));
     }
 
-    /**
-     * @covers Koine\Hash::first()
-     */
     public function testFirst()
     {
         $first = new Hash;
@@ -402,9 +335,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($first, $hash->first());
     }
 
-    /**
-     * @covers Koine\Hash::last()
-     */
     public function testLast()
     {
         $last = new Hash;
@@ -412,9 +342,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($last, $hash->last());
     }
 
-    /**
-     * @covers Koine\Hash::groupBy()
-     */
     public function testGroupByWithCallableObject()
     {
         $foo = new Hash(array('name' => 'foo', 'age' => 20));
@@ -435,9 +362,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $groups->toArray());
     }
 
-    /**
-     * @covers Koine\Hash::groupBy()
-     */
     public function testGroupByWithKey()
     {
         $foo = new Hash(array('name' => 'foo', 'age' => 20));
@@ -473,9 +397,6 @@ class HashTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $sorted->toArray(false));
     }
 
-    /**
-     * @covers Koine\Hash::sortBy()
-     */
     public function testSortByWithCallableObject()
     {
         $this->orderTest(function ($element) {
@@ -483,17 +404,11 @@ class HashTest extends \PHPUnit_Framework_TestCase
         });
     }
 
-    /**
-     * @covers Koine\Hash::sortBy()
-     */
     public function testSortByWithStringParam()
     {
         $this->orderTest('order');
     }
 
-    /**
-     * @covers Koine\Hash::toArray()
-     */
     public function testToArray()
     {
         $params = array(
@@ -555,4 +470,10 @@ class HashTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('sheep', $longest);
     }
+
+    public function assertHash($object)
+    {
+        $this->assertInstanceOf('Koine\Hash', $object);
+    }
+
 }
