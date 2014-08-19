@@ -502,7 +502,7 @@ class Hash extends Object implements ArrayAccess, Iterator, Countable
      */
     protected function isCallable($callable)
     {
-        return gettype($callable) === 'object'
-            && get_class($callable) === 'Closure';
+        return gettype($callable) === 'object';
+            // && get_class($callable) === 'Closure';
     }
 }
