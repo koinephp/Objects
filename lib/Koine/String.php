@@ -140,6 +140,8 @@ class String extends Object
 
     /**
      * Returns part of a string
+     * Known bug in php 5.3.3
+     * @see https://bugs.php.net/bug.php?id=62703
      *
      * @param integer start
      * @param  integer   $length the length of the string from the starting point
